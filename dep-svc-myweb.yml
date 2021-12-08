@@ -21,6 +21,7 @@ spec:
       containers:
       - image: sivapolavarapu53/myweb1:v2
         name: nodeapp
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
