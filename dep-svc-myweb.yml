@@ -19,7 +19,7 @@ spec:
         app: hariapp
     spec:
       containers:
-      - image: sivapolavarapu53/myweb:v2
+      - image: sivapolavarapu53/myweb
         name: nodeapp
         ports:
         - containerPort: 8080
