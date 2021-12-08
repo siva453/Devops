@@ -22,7 +22,7 @@ spec:
       - image: sivapolavarapu53/myweb:v2
         name: nodeapp
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 ---
 #svc for nodeapp
 kind: Service
