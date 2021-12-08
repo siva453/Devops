@@ -1,13 +1,4 @@
-FROM openjdk:8-alpine
-
-# Required for starting application up.
-RUN apk update && apk add /bin/sh
-
-RUN mkdir -p /opt/app
-ENV PROJECT_HOME /opt/app
-
-COPY target/myweb*.war $PROJECT_HOME/myweb.war
-
-WORKDIR $PROJECT_HOME
-
-CMD ["java" ,"-jar","./myweb.war"]
+FROM tomcat:8.0
+COPY /opt/docker/myweb-8.2.0.war /usr/local/tomcat/webapps/myweb.war
+EXPOSE 8080
+#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
