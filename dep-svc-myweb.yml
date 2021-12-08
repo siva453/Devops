@@ -34,7 +34,7 @@ spec:
     app: hariapp
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 8080
     nodePort: 31001
   type: NodePort
