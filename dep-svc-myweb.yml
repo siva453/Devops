@@ -1,0 +1,40 @@
+# Deployment for nodeapp
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp
+spec:
+  replicas: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 30%
+      maxUnavailable: 30%
+  selector:
+    matchLabels:
+      app: hariapp
+  template:
+    metadata:
+      labels:
+        app: hariapp
+    spec:
+      containers:
+      - image: sivapolavarapu53/myweb:v2
+        name: nodeapp
+        ports:
+        - containerPort: 80
+---
+#svc for nodeapp
+kind: Service
+apiVersion: v1
+metadata:
+  name: hariapp
+spec:
+  selector:
+    app: hariapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 31001
+  type: NodePort
