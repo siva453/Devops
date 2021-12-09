@@ -20,7 +20,7 @@ spec:
         app: hariapp
     spec:
       containers:
-      - image: sivapolavarapu53/myweb3:v1
+      - image: sivapolavarapu53/myweb3:latest
         name: nodeapp
         imagePullPolicy: Always
         ports:
