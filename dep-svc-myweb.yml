@@ -27,14 +27,16 @@ spec:
         - containerPort: 8080
 ---
 #svc for nodeapp
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: hariapp
 spec:
-  type: NodePort
-  ports:
-    - port: 8080
-      targetPort: 8080
   selector:
     app: hariapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 31005
+  type: NodePorter
