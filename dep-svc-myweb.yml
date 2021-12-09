@@ -39,4 +39,4 @@ spec:
     port: 80
     targetPort: 80
     nodePort: 31005
-  type: NodePorter
+  type: NodePort
