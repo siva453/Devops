@@ -20,7 +20,7 @@ spec:
         app: hariapp
     spec:
       containers:
-      - image: sivapolavarapu53/myweb4:latest
+      - image: sivapolavarapu53/myweb4:v1
         name: nodeapp
         imagePullPolicy: Always
         ports:
