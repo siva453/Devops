@@ -1,6 +1,6 @@
 # Deployment for nodeapp
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployments
 metadata:
   name: nodeapp
   namespace: default
